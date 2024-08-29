@@ -1,7 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse #importamos el paquete de respuesta http
+from django.contrib.auth.forms import UserChangeForm
+
 
 # Create your views here.
 
 def helloword(request):
-    return HttpResponse('hola mundo')
+    return render(request, "signup.html",{
+        'form': UserChangeForm
+    })
